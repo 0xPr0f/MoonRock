@@ -39,85 +39,83 @@ function App() {
   return (
     <>
       <div className="App">
-        <Router>
-          <div className="sidebar">
-            {/* Routing part of the code */}
+        <div className="sidebar">
+          {/* Routing part of the code */}
 
-            <span className="active">{/*MOONROCK*/} TEST</span>
-            <br />
-            <br />
-            <br />
-            <br />
-            {console.log(window.tronWeb)}
-            <Link to="/home" className="home">
-              <button className="home">Home</button>
-            </Link>
-            <Link to="/nft" className="nft">
-              <button className="nft">NFTs</button>
-            </Link>
-            <Link to="/auction" className="auction">
-              <button className="auction">Auction</button>
-            </Link>
+          <span className="active">{/*MOONROCK*/} TEST</span>
+          <br />
+          <br />
+          <br />
+          <br />
+          {console.log(window.tronWeb)}
+          <Link to="/home" className="home">
+            <button className="home">Home</button>
+          </Link>
+          <Link to="/explore" className="nft">
+            <button className="nft">Explore</button>
+          </Link>
+          <Link to="/auction" className="auction">
+            <button className="auction">Auction</button>
+          </Link>
 
-            <Link to="/swap" className="swap">
-              <button className="swap">Swap</button>
-            </Link>
+          <Link to="/swap" className="swap">
+            <button className="swap">Swap</button>
+          </Link>
 
-            <Link to="/account" className="account">
-              <button className="account">Account</button>
-            </Link>
-            <div className="btm_btn">
-              <button
-                id="myBtn"
-                onClick={() => {
-                  document.getElementById("myModal").style.display = "block";
-                }}
-                className="connect"
-              >
-                Connect Wallet/ Not connected will finish up later
-                {/*  {window.tronWeb.ready == undefined ? (
+          <Link to="/account" className="account">
+            <button className="account">Account</button>
+          </Link>
+          <div className="btm_btn">
+            <button
+              id="myBtn"
+              onClick={() => {
+                document.getElementById("myModal").style.display = "block";
+              }}
+              className="connect"
+            >
+              Connect Wallet/ Not connected will finish up later
+              {/*  {window.tronWeb.ready == undefined ? (
                 <>{Truncate(window.tronWeb.defaultAddress.base58)}</>
               ) : (
                 <>Connect</>
               )} */}
-              </button>
-            </div>
+            </button>
           </div>
+        </div>
 
-          <div id="myModal" className="modal">
-            <div className="modal-content">
-              <span
-                onClick={() => {
-                  document.getElementById("myModal").style.display = "none";
-                }}
-                className="close"
-              >
-                &times;
-              </span>
-              <span id="submenu">Connect to wallet</span>
-              <br />
-              <p id="tiltemenusub">MoonRock</p>
-              <br />
-              <button
-                id="connectwalletbutton"
-                onClick={() => {
-                  connectToTronLink();
-                }}
-              >
-                TronLink Wallet
-              </button>
-            </div>
+        <div id="myModal" className="modal">
+          <div className="modal-content">
+            <span
+              onClick={() => {
+                document.getElementById("myModal").style.display = "none";
+              }}
+              className="close"
+            >
+              &times;
+            </span>
+            <span id="submenu">Connect to wallet</span>
+            <br />
+            <p id="tiltemenusub">MoonRock</p>
+            <br />
+            <button
+              id="connectwalletbutton"
+              onClick={() => {
+                connectToTronLink();
+              }}
+            >
+              TronLink Wallet
+            </button>
           </div>
-          <div className="restofthepage">
-            <Routes>
-              <Route path="/home" element={<Home />} />
-              <Route path="/nft" element={<NFTs />} />
-              <Route path="/auction" element={<Auction />} />
-              <Route path="/swap" element={<Swap />} />
-              <Route path="/account" element={<Account />} />
-            </Routes>
-          </div>
-        </Router>
+        </div>
+        <div className="content">
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/explore" element={<NFTs />} />
+            <Route path="/auction" element={<Auction />} />
+            <Route path="/swap" element={<Swap />} />
+            <Route path="/account" element={<Account />} />
+          </Routes>
+        </div>
       </div>
     </>
   );

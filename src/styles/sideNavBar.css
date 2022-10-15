@@ -76,14 +76,22 @@ button.connect {
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 9px;
+  background: linear-gradient(to right, black 50%, #efefef 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.01s ease-out;
+}
+button.home:hover,
+button.nft:hover,
+button.auction:hover,
+button.account:hover,
+button.swap:hover {
+  background-position: left bottom;
+  color: white;
 }
 
 button.connect {
   border: 2px solid black;
-}
-
-button:hover {
-  background-color: #555;
 }
 
 div.btm_btn {

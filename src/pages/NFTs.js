@@ -2,9 +2,14 @@ import React from "react";
 
 import "../styles/Extras.css";
 import styles from "./../styles/Explore.module.scss";
-
+import { nfts } from "./test";
 import Button from "../components/Button/Button";
 import Options from "../components/Options/Options";
+import Summary from "../components/Summary/Summary";
+import Toggle from "../components/Toogle/Toggle";
+import RangeInput from "../components/RangeInput/RangeInput";
+import MultiRangeSlider from "../components/MultiRangeSlider/MultiRangeSlider";
+import NFTCard from "../components/NFTCard/NFTCard";
 
 import { useState, useEffect } from "react";
 
@@ -66,10 +71,12 @@ export const NFTs = () => {
       <div>
         <div className="backgroundImage"></div>
       </div>
-      <header>
-        <div className="divholder">
-          <div className={styles.ExploreBid}></div>
-
+      <div className={styles.Explore}>
+        <header>
+          <div className={styles.ExploreBid}>
+            <p>Buy an item on sale</p>
+            <Button title="Buy" className={styles.ExploreBidButton} />
+          </div>
           <div className={styles.ExploreTab}>
             <span
               className={
@@ -93,7 +100,41 @@ export const NFTs = () => {
             </span>
           </div>
           <div className={styles.ExploreControls}>
+            <Button
+              className={[styles.ctrlButton, styles.filterDisplayBtn].join(" ")}
+              type={["secondary", "small"]}
+              clickFunction={() =>
+                setFilterDisplay((showFilter) => !showFilter)
+              }
+            >
+              <IoIosArrowBack />
+              <span>Filters</span>
+            </Button>
+            <div className={styles.SearchBox}>
+              <RiSearchLine size={20} className={styles.SearchBoxIcon} />
+              <input
+                placeholder="Search by Meta Angels"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+              />
+              {searchInput && <GrClose onClick={() => setSearchInput("")} />}
+            </div>
             <div className={styles.MenuOptions}>
+              <div
+                aria-controls={open ? "demo-positioned-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+              >
+                <Button
+                  className={styles.ctrlButton}
+                  type={["secondary", "small"]}
+                >
+                  <IoSwapVertical />
+                  <span>{filterValues[filterType]}</span>
+                  <IoChevronDownOutline />
+                </Button>
+              </div>
               <Options anchorEl={anchorEl} handleClose={handleClose}>
                 {Object.keys(filterValues).map((value) => (
                   <MenuItem
@@ -139,8 +180,62 @@ export const NFTs = () => {
               />
             </div>
           </div>
+        </header>
+        <div className={styles.Collections}>
+          {filterDisplay && (
+            <div className={styles.CollectionsFilter}>
+              <div className={styles.CollectionsFilterContainer}>
+                <div style={{ height: "2em" }}></div>
+                <div className={styles.CollectionsFilterContainerControl}>
+                  <Summary title="Status" isActive={true}>
+                    <Toggle label={"listed"} title="Listed Items only" />
+                    <Toggle
+                      label={"c-listing"}
+                      title="Only Community listing"
+                    />
+                  </Summary>
+                  <Summary title="Price" isActive={true}>
+                    <RangeInput showUnit={true} />
+                  </Summary>
+                  <Summary title="Rarity Rank (#1 Rarest)" isActive={true}>
+                    <RangeInput
+                      showUnit={false}
+                      minValue={rarityRankRnage.min}
+                      maxValue={rarityRankRnage.max}
+                      minValCtrl={() => {}}
+                      maxValCtrl={() => {}}
+                      style={{ marginBottom: ".75em" }}
+                    />
+                    <MultiRangeSlider
+                      min={0}
+                      max={10000}
+                      onChange={({ min, max }) => {
+                        console.log(min, max);
+                        return rangeInputUpdate(min, max);
+                      }}
+                    />
+                  </Summary>
+                </div>
+                <div className={styles.CollectionsFilterContainerButtons}>
+                  <Button title="Apply" type="secondary" />
+                  <Button title="Clear Filters" type="secondary" />
+                </div>
+              </div>
+            </div>
+          )}
+          <div className={[styles.CollectionsView, gridDisplayClass].join(" ")}>
+            {nfts.map((listedNft, index) => (
+              <NFTCard
+                key={index}
+                image={listedNft.image}
+                name={listedNft.name}
+                price={listedNft.price}
+                bid={listedNft.bid}
+              />
+            ))}
+          </div>
         </div>
-      </header>
+      </div>
     </>
   );
 };
