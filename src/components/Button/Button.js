@@ -11,7 +11,7 @@ export default function Button({
 }) {
   if (type && type.includes("link")) {
     return (
-      <Link href={linkRoute}>
+      <Link to={linkRoute}>
         <span
           className={[
             styles.Link,

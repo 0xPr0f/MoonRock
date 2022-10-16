@@ -42,7 +42,7 @@ function App() {
         <div className="sidebar">
           {/* Routing part of the code */}
 
-          <span className="active">{/*MOONROCK*/} TEST</span>
+          <span className="active">MOONROCK</span>
           <br />
           <br />
           <br />
@@ -114,6 +114,7 @@ function App() {
             <Route path="/auction" element={<Auction />} />
             <Route path="/swap" element={<Swap />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/token/:contractaddress/:tokenid" element={<Home />} />
           </Routes>
         </div>
       </div>

@@ -10,6 +10,7 @@ import Toggle from "../components/Toogle/Toggle";
 import RangeInput from "../components/RangeInput/RangeInput";
 import MultiRangeSlider from "../components/MultiRangeSlider/MultiRangeSlider";
 import NFTCard from "../components/NFTCard/NFTCard";
+import Footer from "../components/Footer/Footer";
 
 import { useState, useEffect } from "react";
 
@@ -113,7 +114,7 @@ export const NFTs = () => {
             <div className={styles.SearchBox}>
               <RiSearchLine size={20} className={styles.SearchBoxIcon} />
               <input
-                placeholder="Search by Meta Angels"
+                placeholder="Search by Moon Rock"
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
               />
@@ -235,6 +236,7 @@ export const NFTs = () => {
             ))}
           </div>
         </div>
+        <Footer activeSocial={true} />
       </div>
     </>
   );
