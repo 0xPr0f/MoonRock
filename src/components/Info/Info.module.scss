@@ -1,0 +1,14 @@
+.Header {
+    background-color: rgb(8,8,154);
+    width: 100%;
+    height: 40px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+}
+.Info {
+    font-size: large;
+}

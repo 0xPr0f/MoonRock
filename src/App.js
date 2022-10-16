@@ -8,21 +8,21 @@ import { NFTs } from "./pages/NFTs";
 import { Account } from "./pages/Account";
 import { Auction } from "./pages/Auction";
 import { Swap } from "./pages/Swap";
-
+import { Info } from "./components/Info/Info";
+async function connectToTronLink() {
+  await window.tronWeb
+    .request({
+      method: "tron_requestAccounts",
+    })
+    .then((x) => {
+      if (x.code === 200) {
+        console.log(window.tronWeb.ready);
+        document.getElementById("myModal").style.display = "none";
+      }
+    });
+}
 function App() {
   const [address, setAddress] = useState("");
-  async function connectToTronLink() {
-    await window.tronWeb
-      .request({
-        method: "tron_requestAccounts",
-      })
-      .then((x) => {
-        if (x.code === 200) {
-          console.log(window.tronWeb.ready);
-          document.getElementById("myModal").style.display = "none";
-        }
-      });
-  }
 
   window.onclick = function (event) {
     if (event.target === document.getElementById("myModal")) {
@@ -47,7 +47,6 @@ function App() {
           <br />
           <br />
           <br />
-          {console.log(window.tronWeb)}
           <Link to="/home" className="home">
             <button className="home">Home</button>
           </Link>
@@ -108,6 +107,11 @@ function App() {
           </div>
         </div>
         <div className="content">
+          <Info
+            text={
+              "Project was discontinued due to the insufficient resources on the tron network."
+            }
+          />
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/explore" element={<NFTs />} />
