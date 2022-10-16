@@ -1,7 +1,7 @@
 import "./styles/sideNavBar.css";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Truncate } from "./utils/utils";
+import { Routes, Route, Link } from "react-router-dom";
+//import { Truncate } from "./utils/utils";
 import { useEffect, useState } from "react";
 import { Home } from "./pages/Home";
 import { NFTs } from "./pages/NFTs";
@@ -25,7 +25,7 @@ function App() {
   }
 
   window.onclick = function (event) {
-    if (event.target == document.getElementById("myModal")) {
+    if (event.target === document.getElementById("myModal")) {
       document.getElementById("myModal").style.display = "none";
     }
   };
@@ -74,7 +74,7 @@ function App() {
               className="connect"
             >
               Connect Wallet/ Not connected will finish up later
-              {/*  {window.tronWeb.ready == undefined ? (
+              {/*  {window.tronWeb.ready === undefined ? (
                 <>{Truncate(window.tronWeb.defaultAddress.base58)}</>
               ) : (
                 <>Connect</>
