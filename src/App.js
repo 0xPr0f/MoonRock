@@ -33,7 +33,6 @@ function App() {
   useEffect(() => {
     if (window.tronWeb !== undefined && window.tronWeb.ready === true) {
       setAddress(window.tronWeb.defaultAddress.base58);
-      console.log("tron installed ");
     }
   });
   return (
