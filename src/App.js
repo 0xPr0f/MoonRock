@@ -107,11 +107,12 @@ function App() {
           </div>
         </div>
         <div className="content">
+          {/*
           <Info
             text={
               "Project was discontinued due to the insufficient resources on the tron network."
             }
-          />
+          /> */}
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/explore" element={<NFTs />} />

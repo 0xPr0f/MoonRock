@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: "Lato", sans-serif;
+  /*font-family: "Lato", sans-serif;*/
+  font-family: "Old Standard TT", serif;
 }
 
 .sidebar {
@@ -68,7 +69,7 @@ button.connect {
   padding: 1rem 2rem;
   margin: 0;
   text-decoration: none;
-  font-family: sans-serif;
+  font-family: "Old Standard TT", serif;
   font-size: 1rem;
   cursor: pointer;
   width: 200px;
@@ -154,7 +155,7 @@ button#connectwalletbutton {
   padding: 1rem 2rem;
   margin: 0;
   text-decoration: none;
-  font-family: sans-serif;
+  font-family: "Old Standard TT", serif;
   font-size: 1rem;
   cursor: pointer;
   width: 200px;
