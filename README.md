@@ -1,3 +1,3 @@
 # Moon Rock
 
-This project is incomplete and some fucntionalities does work
+This project is incomplete but some fucntionalities does work

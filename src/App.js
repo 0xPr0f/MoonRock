@@ -7,7 +7,7 @@ import { Home } from "./pages/Home";
 import { NFTs } from "./pages/NFTs";
 import { Account } from "./pages/Account";
 import { Auction } from "./pages/Auction";
-import { Swap } from "./pages/Swap";
+import { Send } from "./pages/Send";
 import { Info } from "./components/Info/Info";
 async function connectToTronLink() {
   await window.tronWeb
@@ -57,8 +57,8 @@ function App() {
             <button className="auction">Auction</button>
           </Link>
 
-          <Link to="/swap" className="swap">
-            <button className="swap">Swap</button>
+          <Link to="/send" className="swap">
+            <button className="swap">Send</button>
           </Link>
 
           <Link to="/account" className="account">
@@ -115,9 +115,10 @@ function App() {
           /> */}
           <Routes>
             <Route path="/home" element={<Home />} />
+            <Route path="/" exact element={<Home />} />
             <Route path="/explore" element={<NFTs />} />
             <Route path="/auction" element={<Auction />} />
-            <Route path="/swap" element={<Swap />} />
+            <Route path="/send" element={<Send />} />
             <Route path="/account" element={<Account />} />
             <Route path="/token/:contractaddress/:tokenid" element={<Home />} />
           </Routes>

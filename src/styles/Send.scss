@@ -1,0 +1,115 @@
+.SendOuterDiv{
+    margin: 3em auto;
+}
+
+.swapBoxsend{
+    max-width: 500px;
+    background-color: #F1F1F1;
+    border-radius: 20px;
+    padding:20px;
+    font-size: 25px;
+
+    &Assets{
+        float: left;
+    }
+}
+    .tinytextsend {
+        font-size: 20px;
+    }
+    .inputFieldsend{
+        outline: none;
+        padding: 0.2em 0.27em;
+        font-size: 22px;
+        height: 2em;
+        width: fit-content;
+        font-weight: 500;
+        background-color: white;
+        border-radius: 17px;
+        border: 2px solid white;
+        color: blue;
+        box-shadow: none;
+        transition: none;
+    }
+    .inputFieldsend:hover{
+        transform: none;
+        transition: none;
+        border: 2px solid #F1F1F1;
+    }
+    .tokensend{
+        font-size: 30px;
+        font-weight: 300;
+    
+    }
+    .Blockie {
+        border-radius: 50%;
+      }    
+    .nullsend:hover{
+        transform: none;
+        transition: none;
+        border: 8px solid white;
+    }
+    .center1 {
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+    }
+    .approveSendsend{
+     display: flex;
+     gap: 1em;
+    }
+    .buttonBsend{
+        width: 150px;
+    }
+    .divider{
+        padding: 0.1em ;
+    }
+.flexout{
+    display: flex;
+    align-items: center;
+    gap: 3em;
+}
+.holder{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.blockieaddr {
+    border-radius: 50%;
+    margin-right: 1em;
+  }
+.address{
+    width: 100%;
+}
+.tokenvalue{
+    text-align: right;
+    margin-right: 0;
+    margin-left:auto;
+    width: 100%;
+}
+.topcenter {
+    text-align: left;
+   
+    span {
+        padding: 10em 0em;
+        font-size: 40px;
+    }
+}
+.buttonBsend{
+    margin: 0 auto;
+}
+.currenttoken{
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    width: 100%;
+}
+.estimategas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+}
+.currenttoken:hover{
+    color: #08089A;
+}
